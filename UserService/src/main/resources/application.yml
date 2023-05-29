@@ -1,17 +1,18 @@
 server:
   port: 8081
-
+  
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/user_service_db
-    username: postgres
-    password: postgres
-    driver-class-name: org.postgresql.Driver
-    
-    
+      url: jdbc:postgresql://localhost:5432/user_service_db
+      username: postgres
+      password: postgres
+      driver-class-name: org.postgresql.Driver
+      
+      
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
     database: postgresql
-    database-platform: org.hibernate.dialect.PostgreSQLDialect  
+    database-platform: org.hibernate.dialect.PostgreSQLDialect 
+    open-in-view: false
