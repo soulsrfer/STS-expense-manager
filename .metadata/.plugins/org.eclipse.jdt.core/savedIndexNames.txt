@@ -2,4 +2,3 @@ INDEX VERSION 1.132+C:\Users\ABagada\Documents\expense-manager-app\STS-expense-m
 299686646.index
 1217338618.index
 1865797976.index
-503230505.index
