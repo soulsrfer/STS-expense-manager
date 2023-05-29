@@ -1018,3 +1018,57 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact antlr:antlr:j
 2023-05-29 14:43:45,595 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2023-05-29 14:43:45,595 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2023-05-29 14:43:45,595 [Worker-26: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\CAsari\Documents\STS-expense-manager\UserService\src\test\resources
+2023-05-29 14:46:44,868 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-05-29 14:48:23,141 [Worker-2: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.omniMD:UserService:0.0.1-SNAPSHOT @ C:\Users\ABagada\Documents\expense-manager-app\STS-expense-manager\UserService\pom.xml.
+2023-05-29 14:48:24,520 [Worker-2: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /UserService/src/main/java
+2023-05-29 14:48:24,520 [Worker-2: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /UserService/src/main/resources
+2023-05-29 14:48:24,535 [Worker-2: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /UserService/src/main/resources
+2023-05-29 14:48:24,546 [Worker-2: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /UserService/src/test/java
+2023-05-29 14:48:26,013 [Worker-2: Importing Maven projects] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 4 sec
+2023-05-29 14:48:28,202 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-05-29 14:48:28,203 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2023-05-29 14:48:28,207 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2023-05-29 14:48:28,236 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2023-05-29 14:48:28,244 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-05-29 14:48:28,245 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2023-05-29 14:48:28,245 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\ABagada\Documents\expense-manager-app\STS-expense-manager\UserService\src\test\resources
+2023-05-29 14:48:40,830 [Worker-9: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.omniMD:ExpenseService:0.0.1-SNAPSHOT @ C:\Users\ABagada\Documents\expense-manager-app\STS-expense-manager\ExpenseService\pom.xml.
+2023-05-29 14:48:41,266 [Worker-9: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ExpenseService/src/main/java
+2023-05-29 14:48:41,266 [Worker-9: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ExpenseService/src/main/resources
+2023-05-29 14:48:41,279 [Worker-9: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /ExpenseService/src/main/resources
+2023-05-29 14:48:41,294 [Worker-9: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /ExpenseService/src/test/java
+2023-05-29 14:48:42,085 [Worker-9: Importing Maven projects] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 2 sec
+2023-05-29 14:48:43,287 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-05-29 14:48:43,288 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2023-05-29 14:48:43,288 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2023-05-29 14:48:43,312 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2023-05-29 14:48:43,322 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-05-29 14:48:43,322 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2023-05-29 14:48:43,323 [Worker-6: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\ABagada\Documents\expense-manager-app\STS-expense-manager\ExpenseService\src\test\resources
+2023-05-29 14:48:59,782 [Worker-8: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.omniMD:IncomeService:0.0.1-SNAPSHOT @ C:\Users\ABagada\Documents\expense-manager-app\STS-expense-manager\IncomeService\pom.xml.
+2023-05-29 14:49:00,239 [Worker-8: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /IncomeService/src/main/java
+2023-05-29 14:49:00,239 [Worker-8: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /IncomeService/src/main/resources
+2023-05-29 14:49:00,257 [Worker-8: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /IncomeService/src/main/resources
+2023-05-29 14:49:00,269 [Worker-8: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /IncomeService/src/test/java
+2023-05-29 14:49:00,933 [Worker-8: Importing Maven projects] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 3 sec
+2023-05-29 14:49:01,842 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-05-29 14:49:01,843 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2023-05-29 14:49:01,843 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2023-05-29 14:49:01,860 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2023-05-29 14:49:01,866 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-05-29 14:49:01,866 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2023-05-29 14:49:01,867 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\ABagada\Documents\expense-manager-app\STS-expense-manager\IncomeService\src\test\resources
+2023-05-29 14:49:51,271 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-05-29 14:49:51,271 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2023-05-29 14:49:51,274 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2023-05-29 14:49:51,285 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2023-05-29 14:49:51,289 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-05-29 14:49:51,290 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2023-05-29 14:49:51,290 [Worker-4: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\ABagada\Documents\expense-manager-app\STS-expense-manager\UserService\src\test\resources
+2023-05-29 14:50:54,272 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-05-29 14:50:54,272 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2023-05-29 14:50:54,273 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2023-05-29 14:50:54,282 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2023-05-29 14:50:54,285 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-05-29 14:50:54,285 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
+2023-05-29 14:50:54,285 [Worker-1: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\ABagada\Documents\expense-manager-app\STS-expense-manager\UserService\src\test\resources
