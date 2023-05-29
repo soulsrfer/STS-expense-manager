@@ -1,0 +1,5 @@
+INDEX VERSION 1.132+C:\Users\CAsari\Documents\STS-expense-manager\.metadata\.plugins\org.eclipse.jdt.core
+1217338618.index
+299686646.index
+503230505.index
+1865797976.index
