@@ -1,0 +1,5 @@
+package com.ominMD.userService.entities;
+
+public class UserEntity {
+
+}
