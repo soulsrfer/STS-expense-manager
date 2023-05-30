@@ -1,0 +1,5 @@
+package com.ominMD.expenseService.controllers;
+
+public class ExpenseController {
+
+}

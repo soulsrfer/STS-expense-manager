@@ -1,0 +1,8 @@
+package com.ominMD.expenseService.repositories;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ExpenseRepository extends JpaRepostiroy<ExpenseEntity, Integer> {
+
+}

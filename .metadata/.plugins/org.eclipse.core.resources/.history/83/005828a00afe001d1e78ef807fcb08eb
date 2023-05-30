@@ -1,0 +1,5 @@
+package com.ominMD.expenseService.services;
+
+public interface ExpenseService {
+
+}
