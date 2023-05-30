@@ -47,7 +47,6 @@ INDEX VERSION 1.132+C:\Users\CAsari\Documents\STS-expense-manager\.metadata\.plu
 3821585641.index
 2366650118.index
 3997629250.index
-503230505.index
 1568199031.index
 2767640280.index
 2783738316.index
