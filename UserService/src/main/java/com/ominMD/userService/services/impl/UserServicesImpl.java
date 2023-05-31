@@ -12,6 +12,7 @@ import com.ominMD.userService.dto.Expense;
 import com.ominMD.userService.dto.Income;
 import com.ominMD.userService.entities.UserEntity;
 import com.ominMD.userService.excaptions.ResourceNotFoundExcaption;
+import com.ominMD.userService.external.services.ExpenseService;
 import com.ominMD.userService.repositories.RoleRepository;
 import com.ominMD.userService.repositories.UserRepository;
 import com.ominMD.userService.services.UserServices;
@@ -27,6 +28,9 @@ public class UserServicesImpl implements UserServices {
 	
 	@Autowired
 	RestTemplate restTemplate;
+	
+	@Autowired
+	ExpenseService expenseService;
 	
 	@Override
 	public UserEntity addUser(UserEntity userEntity) {
@@ -45,8 +49,11 @@ public class UserServicesImpl implements UserServices {
 	@Override
 	public UserEntity getUserById(Integer id) {
 		UserEntity user=userRepository.findById(id).orElseThrow(() -> new ResourceNotFoundExcaption("user in not found for this id :"+id));
-		List<Expense> expenses = (restTemplate.getForObject("http://localhost:8082/expenses/user/" +id, List.class));
-		List<Income> incomes = (restTemplate.getForObject("http://localhost:8083/incomes/user/" + id, List.class));
+		
+//		List<Expense> expenses = (restTemplate.getForObject("http://EXPENSE-SERVICE/expenses/user/" +id, List.class));
+		List<Expense> expenses = expenseService.getExpensesByUser(id);
+		
+		List<Income> incomes = (restTemplate.getForObject("http://INCOME-SERVICE/incomes/user/" + id, List.class));
 		user.setExpenses(expenses);
 		user.setIncomes(incomes);
 		return user;
