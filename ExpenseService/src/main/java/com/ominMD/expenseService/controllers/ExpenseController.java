@@ -47,6 +47,12 @@ public class ExpenseController {
 		return ResponseEntity.status(HttpStatus.OK).body(expenses);
 	}
 	
+	@GetMapping("/user/{userId}")
+	public ResponseEntity<List<ExpenseEntity>> readAllExpensesByUserId(@PathVariable("userId") Integer userId) {
+		List<ExpenseEntity> expenses = expenseService.getAllExpensesByUserId(userId);
+		return ResponseEntity.status(HttpStatus.OK).body(expenses);
+	}
+	
 	@PutMapping
 	public ResponseEntity<ExpenseEntity> updateExpense(@RequestBody ExpenseEntity expense) {
 		ExpenseEntity updatedExpense = expenseService.updateExpense(expense);

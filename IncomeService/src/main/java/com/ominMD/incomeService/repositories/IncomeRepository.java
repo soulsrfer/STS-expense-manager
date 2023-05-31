@@ -11,4 +11,6 @@ import com.ominMD.incomeService.entities.IncomeEntity;
 public interface IncomeRepository extends JpaRepository<IncomeEntity, Integer>{
 
 	List<IncomeEntity>  findByUserId(int userId);
+
+	List<IncomeEntity> findAllByUserId(int userId);
 }

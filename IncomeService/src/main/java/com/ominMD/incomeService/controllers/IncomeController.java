@@ -30,7 +30,7 @@ public class IncomeController {
 		return ResponseEntity.status(HttpStatus.CREATED).body(income);
 	}
 	
-	@GetMapping("")
+	@GetMapping
 	public ResponseEntity<List<IncomeEntity>> getAllIncome(){
 		List<IncomeEntity> incomes=incomeServices.getAllIncome();
 		return ResponseEntity.status(HttpStatus.OK).body(incomes);
@@ -42,7 +42,7 @@ public class IncomeController {
 		return ResponseEntity.status(HttpStatus.OK).body(income);
 	}
 	
-	@GetMapping("/{userId}")
+	@GetMapping("/user/{userId}")
 	public ResponseEntity<List<IncomeEntity>> getIncomeByUserId(@PathVariable("userId") int userId){
 	  List<IncomeEntity> income=incomeServices.getAllIncomeByUserId(userId);
 		return ResponseEntity.status(HttpStatus.OK).body(income);
@@ -55,7 +55,7 @@ public class IncomeController {
 		return ResponseEntity.status(HttpStatus.OK).body(income);
 	}
 	
-	@PutMapping("")
+	@PutMapping
 	public ResponseEntity<IncomeEntity> updateIncome(@RequestBody IncomeEntity incomeEntity){
 		IncomeEntity income=incomeServices.updateIncome(incomeEntity);
 		return ResponseEntity.status(HttpStatus.OK).body(income);

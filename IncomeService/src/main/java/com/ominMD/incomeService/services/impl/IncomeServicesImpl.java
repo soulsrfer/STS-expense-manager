@@ -36,7 +36,7 @@ public class IncomeServicesImpl implements IncomeServices {
 	
 	@Override
 	public List<IncomeEntity> getAllIncomeByUserId(int userId) {
-		List<IncomeEntity> incomes= incomeRepository.findByUserId(userId);
+		List<IncomeEntity> incomes= incomeRepository.findAllByUserId(userId);
 		return incomes;
 	}
 	

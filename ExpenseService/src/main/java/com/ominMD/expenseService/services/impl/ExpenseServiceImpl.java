@@ -55,7 +55,13 @@ public class ExpenseServiceImpl implements ExpenseService {
 	@Override
 	public List<ExpenseEntity> getAllExpensesByUserId(Integer userId) {
 		List<ExpenseEntity> expenses = expenseRepo.findAllByUserId(userId);
-		return null;
+		return expenses;
+	}
+
+	@Override
+	public List<ExpenseEntity> getExpensesByUserId(Integer userId) {
+		List<ExpenseEntity> expenses = expenseRepo.findAllByUserId(userId);
+		return expenses;
 	}
 	
 	

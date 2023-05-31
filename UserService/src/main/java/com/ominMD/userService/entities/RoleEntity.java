@@ -26,6 +26,8 @@ public class RoleEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String name;
+	
+
 	@OneToOne(mappedBy = "role")
 	UserEntity userEntity;
 }

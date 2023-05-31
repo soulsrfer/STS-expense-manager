@@ -16,6 +16,9 @@ public interface ExpenseService {
 	//get all expenses
 	List<ExpenseEntity> getAllExpenses();
 	
+	//get all expenses by user id
+	List<ExpenseEntity> getExpensesByUserId(Integer userId);
+	
 	//update expense by id 
 	ExpenseEntity updateExpense(ExpenseEntity expense);
 	
