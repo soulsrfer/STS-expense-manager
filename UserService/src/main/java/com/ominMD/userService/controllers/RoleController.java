@@ -1,5 +1,7 @@
 package com.ominMD.userService.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +32,12 @@ public class RoleController {
 	}
 	
 	@GetMapping
-	public ResponseEntity<RoleEntity> findRoleByName(@PathVariable String roleName) {
+	public ResponseEntity<List<RoleEntity>> getRoles() {
+		List<RoleEntity> roles = roleService.getAllRoles();
+		return ResponseEntity.status(HttpStatus.OK).body(roles);
+	}
+	@GetMapping("/{roleName}")
+	public ResponseEntity<RoleEntity> findRoleByName(@PathVariable("roleName") String roleName) {
 		RoleEntity role = roleService.readRole(roleName);
 		
 		return ResponseEntity.status(HttpStatus.OK).body(role);

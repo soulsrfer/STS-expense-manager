@@ -1,5 +1,7 @@
 package com.ominMD.userService.services.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +23,12 @@ public class RoleServiceImpl implements RoleService{
 	@Override
 	public RoleEntity readRole(String name) {	
 		return roleRepo.findByName(name);
+	}
+
+	@Override
+	public List<RoleEntity> getAllRoles() {
+		
+		return roleRepo.findAll();
 	}
 
 }

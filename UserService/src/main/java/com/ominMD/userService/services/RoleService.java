@@ -1,5 +1,7 @@
 package com.ominMD.userService.services;
 
+import java.util.List;
+
 import com.ominMD.userService.entities.RoleEntity;
 
 public interface RoleService {
@@ -9,4 +11,6 @@ public interface RoleService {
 	
 	//read role
 	RoleEntity readRole(String name);
+
+	List<RoleEntity> getAllRoles();
 }
