@@ -20,7 +20,7 @@ import com.ominMD.userService.services.UserServices;
 @Service
 public class UserServicesImpl implements UserServices {
 	
-	@Autowired
+	@Autowired	
 	UserRepository userRepository;
 	
 	@Autowired
