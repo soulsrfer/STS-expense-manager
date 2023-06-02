@@ -18,30 +18,29 @@ import com.ominMD.userService.services.RoleService;
 @RestController
 @RequestMapping("/roles")
 public class RoleController {
-	
-	
+
 	@Autowired
 	RoleService roleService;
-	
+
 	@PostMapping
 	public ResponseEntity<RoleEntity> createRole(@RequestBody RoleEntity role) {
-		
+
 		RoleEntity role1 = roleService.createRole(role);
-		
+
 		return ResponseEntity.status(HttpStatus.OK).body(role1);
 	}
-	
+
 	@GetMapping
 	public ResponseEntity<List<RoleEntity>> getRoles() {
 		List<RoleEntity> roles = roleService.getAllRoles();
 		return ResponseEntity.status(HttpStatus.OK).body(roles);
 	}
+
 	@GetMapping("/{roleName}")
 	public ResponseEntity<RoleEntity> findRoleByName(@PathVariable("roleName") String roleName) {
 		RoleEntity role = roleService.readRole(roleName);
-		
+
 		return ResponseEntity.status(HttpStatus.OK).body(role);
-	} 
-	
-	
+	}
+
 }

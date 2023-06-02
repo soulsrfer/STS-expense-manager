@@ -12,8 +12,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Income {
-	
+
 	private double amount;
-	private Date  date;
+	private Date date;
 	private int userId;
 }

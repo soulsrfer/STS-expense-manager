@@ -27,7 +27,7 @@ public class ExpenseController {
 	
 	@PostMapping
 	public ResponseEntity<ExpenseEntity> createExpense(@RequestBody ExpenseEntity expense) {
-		System.out.println();
+//		System.out.println();
 		ExpenseEntity expense1 = expenseService.createExpense(expense);
 		
 		return ResponseEntity.status(HttpStatus.OK).body(expense1);
@@ -66,6 +66,9 @@ public class ExpenseController {
 		
 		return ResponseEntity.status(HttpStatus.OK).body(expense);
 	}
+	
+	
+	
 	
 	
 }

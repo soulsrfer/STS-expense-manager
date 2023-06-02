@@ -10,7 +10,7 @@ import com.ominMD.userService.dto.Expense;
 
 @FeignClient(name = "EXPENSE-SERVICE")
 public interface ExpenseService {
-	
+
 	@GetMapping("/expenses/user/{userId}")
 	List<Expense> getExpensesByUser(@PathVariable("userId") Integer userId);
 }

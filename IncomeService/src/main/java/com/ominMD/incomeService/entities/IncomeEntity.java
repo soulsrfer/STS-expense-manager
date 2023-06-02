@@ -1,5 +1,6 @@
 package com.ominMD.incomeService.entities;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -29,7 +30,7 @@ public class IncomeEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private double amount;
-	private Date  date;
+	private LocalDateTime  date;
 	
 	private int userId;
 	

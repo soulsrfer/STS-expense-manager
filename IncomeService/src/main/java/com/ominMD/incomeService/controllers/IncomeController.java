@@ -1,6 +1,7 @@
 package com.ominMD.incomeService.controllers;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ominMD.incomeService.entities.IncomeEntity;
+import com.ominMD.incomeService.repositories.IncomeRepository;
+import com.ominMD.incomeService.responses.IncomeResponse;
 import com.ominMD.incomeService.services.IncomeServices;
 
 @RestController
@@ -23,6 +26,9 @@ public class IncomeController {
 
 	@Autowired
 	IncomeServices incomeServices;
+	
+	@Autowired
+	IncomeRepository incomeRepo;
 	
 	@PostMapping("")
 	public ResponseEntity<IncomeEntity> addIncome(@RequestBody IncomeEntity incomeEntity) {
@@ -59,5 +65,18 @@ public class IncomeController {
 	public ResponseEntity<IncomeEntity> updateIncome(@RequestBody IncomeEntity incomeEntity){
 		IncomeEntity income=incomeServices.updateIncome(incomeEntity);
 		return ResponseEntity.status(HttpStatus.OK).body(income);
+	}
+	
+	@GetMapping("/totalAmount/{userId}")
+	public ResponseEntity<IncomeResponse> getTotalIncome(@PathVariable("userId") Integer userId) {
+		System.out.println(userId);
+		List<IncomeEntity> incomes = incomeServices.getAllIncomeByUserId(userId);
+		
+		IncomeResponse resp = new IncomeResponse();
+		Map<String, Object> income = incomeRepo.getTotalAmountOfUser(userId);
+		resp.setTotalAmount( Double.valueOf(String.valueOf(income.get("amount"))));
+		resp.setIncomes(incomes);
+		
+		return ResponseEntity.status(HttpStatus.OK).body(resp);
 	}
 }

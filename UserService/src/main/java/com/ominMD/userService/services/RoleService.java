@@ -5,11 +5,11 @@ import java.util.List;
 import com.ominMD.userService.entities.RoleEntity;
 
 public interface RoleService {
-	
-	//create role
+
+	// create role
 	RoleEntity createRole(RoleEntity role);
-	
-	//read role
+
+	// read role
 	RoleEntity readRole(String name);
 
 	List<RoleEntity> getAllRoles();

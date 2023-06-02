@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -26,8 +28,8 @@ public class RoleEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String name;
-	
 
 	@OneToOne(mappedBy = "role")
+	@JsonIgnore
 	UserEntity userEntity;
 }

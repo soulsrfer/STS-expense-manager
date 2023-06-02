@@ -23,4 +23,7 @@ public interface IncomeServices {
 	
 	//update income
 	IncomeEntity updateIncome(IncomeEntity incomeEntity);
+	
+	//delete all incomes by userId
+	List<IncomeEntity> deleteAllIncomeByUser(Integer UserId); 
 }

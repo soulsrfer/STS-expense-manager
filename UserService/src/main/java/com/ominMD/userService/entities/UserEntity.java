@@ -10,6 +10,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.ominMD.userService.dto.Expense;
 import com.ominMD.userService.dto.Income;
 
@@ -25,7 +26,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserEntity {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
@@ -47,12 +48,11 @@ public class UserEntity {
 
 	@OneToOne
 	private RoleEntity role;
-	
+
 	@Transient
 	List<Expense> expenses;
-	
+
 	@Transient
 	List<Income> incomes;
-	
-	
+
 }

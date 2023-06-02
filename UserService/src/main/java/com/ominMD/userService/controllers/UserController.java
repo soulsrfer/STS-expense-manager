@@ -15,43 +15,57 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ominMD.userService.entities.UserEntity;
+import com.ominMD.userService.repositories.UserRepository;
+import com.ominMD.userService.responses.UserResponse;
 import com.ominMD.userService.services.UserServices;
 
 @RestController
 @RequestMapping("/users")
 public class UserController {
-	
+
 	@Autowired
 	UserServices userServices;
 	
-	
+	@Autowired
+	UserRepository userRepo;
+
 	@PostMapping("")
-	public ResponseEntity<UserEntity> addUser(@RequestBody UserEntity userEntity){
-		UserEntity user= userServices.addUser(userEntity);
-		return ResponseEntity.status(HttpStatus.CREATED).body(user);
+	public ResponseEntity<UserResponse> addUser(@RequestBody UserEntity userEntity) {
+		UserEntity user = userServices.addUser(userEntity);
+		
+		if(user.getRole() == null) {
+			userRepo.delete(user);
+			return ResponseEntity.status(HttpStatus.UNPROCESSABLE_ENTITY).body(null);
+		}
+		UserResponse response = userServices.entityToResponse(user);
+		
+		
+		return ResponseEntity.status(HttpStatus.CREATED).body(response);
 	}
-	
+
 	@GetMapping("")
-	public ResponseEntity<List<UserEntity>> getAllUser(){
-		List<UserEntity> users=userServices.getAllUser();
+	public ResponseEntity<List<UserEntity>> getAllUser() {
+		List<UserEntity> users = userServices.getAllUser();
+		
 		return ResponseEntity.status(HttpStatus.OK).body(users);
 	}
-	
+
 	@GetMapping("/{id}")
-	public ResponseEntity<UserEntity> getUserById(@PathVariable("id") Integer id){
-		UserEntity user=userServices.getUserById(id);
-		return ResponseEntity.status(HttpStatus.OK).body(user);
+	public ResponseEntity<UserResponse> getUserById(@PathVariable("id") Integer id) {
+		UserEntity user = userServices.getUserById(id);
+		UserResponse response = userServices.entityToResponse(user);
+		return ResponseEntity.status(HttpStatus.OK).body(response);
 	}
-	
+
 	@DeleteMapping("{id}")
-	public ResponseEntity<UserEntity> deleteUserById(@PathVariable("id") Integer id){
-		UserEntity user=userServices.deleteUserById(id);
+	public ResponseEntity<UserEntity> deleteUserById(@PathVariable("id") Integer id) {
+		UserEntity user = userServices.deleteUserById(id);
 		return ResponseEntity.status(HttpStatus.OK).body(user);
 	}
-	
+
 	@PutMapping("")
-    public ResponseEntity<UserEntity> updateUser(@RequestBody UserEntity userEntity){
-		UserEntity user=userServices.updateUser(userEntity);
+	public ResponseEntity<UserEntity> updateUser(@RequestBody UserEntity userEntity) {
+		UserEntity user = userServices.updateUser(userEntity);
 		return ResponseEntity.status(HttpStatus.OK).body(user);
 	}
 

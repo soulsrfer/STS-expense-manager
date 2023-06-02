@@ -11,9 +11,9 @@ import com.ominMD.userService.responses.ApiResponse;
 public class GlobalExcaptionHendler {
 
 	@ExceptionHandler(ResourceNotFoundExcaption.class)
-	public ResponseEntity<ApiResponse> LorderResourceNotFoundExcaption(ResourceNotFoundExcaption ex){
-		String message=ex.getMessage();
-	    ApiResponse	response=ApiResponse.builder().msg(message).success(true).status(HttpStatus.NOT_FOUND).build();
-	    return new ResponseEntity<ApiResponse>(response,HttpStatus.NOT_FOUND);
+	public ResponseEntity<ApiResponse> LorderResourceNotFoundExcaption(ResourceNotFoundExcaption ex) {
+		String message = ex.getMessage();
+		ApiResponse response = ApiResponse.builder().msg(message).success(true).status(HttpStatus.NOT_FOUND).build();
+		return new ResponseEntity<ApiResponse>(response, HttpStatus.NOT_FOUND);
 	}
 }

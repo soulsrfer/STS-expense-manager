@@ -10,10 +10,11 @@ import com.ominMD.userService.repositories.RoleRepository;
 import com.ominMD.userService.services.RoleService;
 
 @Service
-public class RoleServiceImpl implements RoleService{
-	
+public class RoleServiceImpl implements RoleService {
+
 	@Autowired
 	RoleRepository roleRepo;
+
 	@Override
 	public RoleEntity createRole(RoleEntity role) {
 		roleRepo.save(role);
@@ -21,13 +22,13 @@ public class RoleServiceImpl implements RoleService{
 	}
 
 	@Override
-	public RoleEntity readRole(String name) {	
+	public RoleEntity readRole(String name) {
 		return roleRepo.findByName(name);
 	}
 
 	@Override
 	public List<RoleEntity> getAllRoles() {
-		
+
 		return roleRepo.findAll();
 	}
 

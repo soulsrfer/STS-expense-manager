@@ -13,6 +13,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 
@@ -28,7 +29,7 @@ public class ExpenseEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private double amount;
-	private Date date;
+	private LocalDateTime date;
 	
 	private Integer userId;
 	

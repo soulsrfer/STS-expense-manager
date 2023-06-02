@@ -1,5 +1,6 @@
 package com.ominMD.incomeService.services.impl;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ public class IncomeServicesImpl implements IncomeServices {
 	
 	@Override
 	public IncomeEntity createIncome(IncomeEntity incomeEntity) {
+		incomeEntity.setDate(LocalDateTime.now());
 		IncomeEntity income=incomeRepository.save(incomeEntity);
 		return income;
 	}
@@ -51,6 +53,12 @@ public class IncomeServicesImpl implements IncomeServices {
 	public IncomeEntity updateIncome(IncomeEntity incomeEntity) {
 		IncomeEntity income=incomeRepository.save(incomeEntity);
 		return income;
+	}
+
+	@Override
+	public List<IncomeEntity> deleteAllIncomeByUser(Integer userId) {
+		List<IncomeEntity> incomes = incomeRepository.deleteAllByUserId(userId);
+		return null;
 	}
 
 }

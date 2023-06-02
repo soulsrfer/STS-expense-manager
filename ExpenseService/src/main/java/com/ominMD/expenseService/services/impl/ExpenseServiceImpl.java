@@ -1,5 +1,7 @@
 package com.ominMD.expenseService.services.impl;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +20,7 @@ public class ExpenseServiceImpl implements ExpenseService {
 
 	@Override
 	public ExpenseEntity createExpense(ExpenseEntity expense) {
-		
+		expense.setDate(LocalDateTime.now());
 		return expenseRepo.save(expense);
 	}
 
@@ -62,6 +64,12 @@ public class ExpenseServiceImpl implements ExpenseService {
 	public List<ExpenseEntity> getExpensesByUserId(Integer userId) {
 		List<ExpenseEntity> expenses = expenseRepo.findAllByUserId(userId);
 		return expenses;
+	}
+
+	@Override
+	public List<ExpenseEntity> deleteAllExpensesByUserId(Integer userId) {
+		List<ExpenseEntity> expenses = expenseRepo.deleteAllByUserId(userId);
+		return null;
 	}
 	
 	
