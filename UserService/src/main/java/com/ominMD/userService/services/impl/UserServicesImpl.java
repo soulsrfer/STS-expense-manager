@@ -1,6 +1,7 @@
 package com.ominMD.userService.services.impl;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -87,6 +88,12 @@ public class UserServicesImpl implements UserServices {
 				.incomes(user.getIncomes())
 				.build();
 		return response;
+	}
+
+	@Override
+	public Map<String, Object> getUserBalance(Integer userId) {
+		
+		return null;
 	}
 
 }

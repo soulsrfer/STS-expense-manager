@@ -15,6 +15,6 @@ import lombok.Setter;
 @AllArgsConstructor
 public class IncomeResponse {
 	
-	private double totalAmount;
-	private List<IncomeEntity> incomes;
+	private double totalIncome;
+	private List<IncomeEntity> incomeList;
 }

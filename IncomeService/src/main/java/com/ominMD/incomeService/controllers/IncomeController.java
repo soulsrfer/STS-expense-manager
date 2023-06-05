@@ -67,16 +67,40 @@ public class IncomeController {
 		return ResponseEntity.status(HttpStatus.OK).body(income);
 	}
 	
-	@GetMapping("/totalAmount/{userId}")
+	@GetMapping("incomeList/{userId}")
 	public ResponseEntity<IncomeResponse> getTotalIncome(@PathVariable("userId") Integer userId) {
 		System.out.println(userId);
 		List<IncomeEntity> incomes = incomeServices.getAllIncomeByUserId(userId);
 		
 		IncomeResponse resp = new IncomeResponse();
-		Map<String, Object> income = incomeRepo.getTotalAmountOfUser(userId);
-		resp.setTotalAmount( Double.valueOf(String.valueOf(income.get("amount"))));
-		resp.setIncomes(incomes);
+		Map<String, Object> income = incomeRepo.getTotalIncomeOfUser(userId);
+		resp.setTotalIncome( Double.valueOf(String.valueOf(income.get("amount"))));
+		resp.setIncomeList(incomes);
 		
 		return ResponseEntity.status(HttpStatus.OK).body(resp);
 	}
+	
+
+	
+	@GetMapping("/totalIncome/{userId}")
+	public ResponseEntity<Double> getTotalIncomeOfUser(@PathVariable Integer userId) {
+		double totalIncome = incomeServices.getTotalIncomeOfUser(userId);
+		
+		return ResponseEntity.status(HttpStatus.OK).body(totalIncome);
+	}
+	
+	
+//	@GetMapping("/totalIncome/{userId}")
+//	public ResponseEntity<IncomeResponse> getTotalIncomeOfUser(@PathVariable("userId") Integer userId) {
+//		System.out.println(userId);
+//		List<IncomeEntity> incomes = incomeServices.getAllIncomeByUserId(userId);
+//		
+//		IncomeResponse resp = new IncomeResponse();
+//		Map<String, Object> income = incomeRepo.getTotalIncomeOfUser(userId);
+//		resp.setTotalIncome( Double.valueOf(String.valueOf(income.get("amount"))));
+//		resp.setIncomeList(incomes);
+//		
+//		return ResponseEntity.status(HttpStatus.OK).body(resp);
+//	}
+	
 }

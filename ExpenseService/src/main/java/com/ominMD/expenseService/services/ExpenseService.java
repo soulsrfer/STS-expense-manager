@@ -29,5 +29,8 @@ public interface ExpenseService {
 	List<ExpenseEntity> getAllExpensesByUserId(Integer userId);
 	
 	//delete all expenses by user id
-	List<ExpenseEntity> deleteAllExpensesByUserId(Integer userID);
+	List<ExpenseEntity> deleteAllExpensesByUserId(Integer userId);
+	
+	//get Total expense of user
+	double getTotalExpenseOfUser(Integer userId);
 }

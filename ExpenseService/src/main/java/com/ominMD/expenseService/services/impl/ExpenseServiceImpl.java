@@ -3,6 +3,7 @@ package com.ominMD.expenseService.services.impl;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -69,7 +70,21 @@ public class ExpenseServiceImpl implements ExpenseService {
 	@Override
 	public List<ExpenseEntity> deleteAllExpensesByUserId(Integer userId) {
 		List<ExpenseEntity> expenses = expenseRepo.deleteAllByUserId(userId);
-		return null;
+		return expenses;
+	}
+
+	@Override
+	public double getTotalExpenseOfUser(Integer userId) {
+		System.out.println("Start");
+		Map<String, Object> expense = expenseRepo.getSumOfexpenseByUserId(userId);
+		
+		double totalExpense = 0.0;
+		
+		if(null != expense.get("amount")) {
+			return totalExpense = ( Double.valueOf(String.valueOf(expense.get("amount"))));
+		}else {
+			return totalExpense;
+		}
 	}
 	
 	

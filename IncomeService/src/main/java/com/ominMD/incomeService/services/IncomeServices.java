@@ -26,4 +26,7 @@ public interface IncomeServices {
 	
 	//delete all incomes by userId
 	List<IncomeEntity> deleteAllIncomeByUser(Integer UserId); 
+	
+	//get total income of user
+	double getTotalIncomeOfUser(Integer userId);
 }

@@ -19,5 +19,5 @@ public interface IncomeRepository extends JpaRepository<IncomeEntity, Integer>{
 	List<IncomeEntity> deleteAllByUserId(Integer userId);
 	
 	@Query(value= "select sum(amount) as amount from incomes where user_id = :userId",nativeQuery = true)
-	Map<String, Object> getTotalAmountOfUser(Integer userId);
+	Map<String, Object> getTotalIncomeOfUser(Integer userId);
 }

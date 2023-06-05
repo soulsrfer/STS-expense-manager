@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ominMD.expenseService.entities.ExpenseEntity;
+import com.ominMD.expenseService.repositories.ExpenseRepository;
+import com.ominMD.expenseService.responses.ExpenseResponse;
 import com.ominMD.expenseService.services.ExpenseService;
 
 @RestController
@@ -66,6 +68,18 @@ public class ExpenseController {
 		
 		return ResponseEntity.status(HttpStatus.OK).body(expense);
 	}
+	
+	@GetMapping("/totalExpense/{userId}")
+	public ResponseEntity<ExpenseResponse> getTotalExpense(@PathVariable("userId") Integer userId) {
+		ExpenseResponse response = ExpenseResponse.builder()
+				.totalIncome(expenseService.getTotalExpenseOfUser(userId))
+				.incomeList(expenseService.getAllExpensesByUserId(userId))
+				.build();
+		
+		return ResponseEntity.status(HttpStatus.OK).body(response);
+				
+		
+	} 
 	
 	
 	

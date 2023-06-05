@@ -1,6 +1,7 @@
 package com.ominMD.userService.services;
 
 import java.util.List;
+import java.util.Map;
 
 import com.ominMD.userService.entities.UserEntity;
 import com.ominMD.userService.responses.UserResponse;
@@ -22,5 +23,8 @@ public interface UserServices {
 	// update user
 	UserEntity updateUser(UserEntity userEntity);
 	
+	//convert object from UserEntity to ResponseEntity
 	UserResponse entityToResponse(UserEntity user);
+	
+	Map<String, Object> getUserBalance(Integer userId);
 }
