@@ -48,7 +48,7 @@ public class IncomeController {
 		return ResponseEntity.status(HttpStatus.OK).body(income);
 	}
 	
-	@GetMapping("/user/{userId}")
+	@GetMapping("/incomeList/{userId}")
 	public ResponseEntity<List<IncomeEntity>> getIncomeByUserId(@PathVariable("userId") int userId){
 	  List<IncomeEntity> income=incomeServices.getAllIncomeByUserId(userId);
 		return ResponseEntity.status(HttpStatus.OK).body(income);
@@ -67,7 +67,7 @@ public class IncomeController {
 		return ResponseEntity.status(HttpStatus.OK).body(income);
 	}
 	
-	@GetMapping("incomeList/{userId}")
+	@GetMapping("user/{userId}")
 	public ResponseEntity<IncomeResponse> getTotalIncome(@PathVariable("userId") Integer userId) {
 		System.out.println(userId);
 		List<IncomeEntity> incomes = incomeServices.getAllIncomeByUserId(userId);

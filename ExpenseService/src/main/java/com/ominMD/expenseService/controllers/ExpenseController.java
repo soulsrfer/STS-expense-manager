@@ -49,7 +49,7 @@ public class ExpenseController {
 		return ResponseEntity.status(HttpStatus.OK).body(expenses);
 	}
 	
-	@GetMapping("/user/{userId}")
+	@GetMapping("/expenseList/{userId}")
 	public ResponseEntity<List<ExpenseEntity>> readAllExpensesByUserId(@PathVariable("userId") Integer userId) {
 		List<ExpenseEntity> expenses = expenseService.getAllExpensesByUserId(userId);
 		return ResponseEntity.status(HttpStatus.OK).body(expenses);
@@ -70,13 +70,11 @@ public class ExpenseController {
 	}
 	
 	@GetMapping("/totalExpense/{userId}")
-	public ResponseEntity<ExpenseResponse> getTotalExpense(@PathVariable("userId") Integer userId) {
-		ExpenseResponse response = ExpenseResponse.builder()
-				.totalIncome(expenseService.getTotalExpenseOfUser(userId))
-				.incomeList(expenseService.getAllExpensesByUserId(userId))
-				.build();
+	public ResponseEntity<Double> getTotalExpense(@PathVariable("userId") Integer userId) {
+				double totalIncome = expenseService.getTotalExpenseOfUser(userId);
+				
 		
-		return ResponseEntity.status(HttpStatus.OK).body(response);
+		return ResponseEntity.status(HttpStatus.OK).body(totalIncome);
 				
 		
 	} 

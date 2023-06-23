@@ -31,8 +31,12 @@ public class UserResponse {
 	private String email;
 	
 	private String role;
+	
+	private double balance;
 
 	List<Expense> expenses;
 
 	List<Income> incomes;
+	
+	
 }

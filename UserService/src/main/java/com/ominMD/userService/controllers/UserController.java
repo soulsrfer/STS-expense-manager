@@ -68,5 +68,11 @@ public class UserController {
 		UserEntity user = userServices.updateUser(userEntity);
 		return ResponseEntity.status(HttpStatus.OK).body(user);
 	}
-
+	
+	@GetMapping("/userBalance/{userId}")
+	public ResponseEntity<Double> getUserBalance(@PathVariable("userId") Integer userId) {
+		double balance = userServices.getUserBalance(userId);
+		return ResponseEntity.status(HttpStatus.OK).body(balance);
+	}
+	
 }

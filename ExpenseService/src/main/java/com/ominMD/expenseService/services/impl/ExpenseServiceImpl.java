@@ -76,7 +76,7 @@ public class ExpenseServiceImpl implements ExpenseService {
 	@Override
 	public double getTotalExpenseOfUser(Integer userId) {
 		System.out.println("Start");
-		Map<String, Object> expense = expenseRepo.getSumOfexpenseByUserId(userId);
+		Map<String, Object> expense = expenseRepo.getTotalExpenseOfUser(userId);
 		
 		double totalExpense = 0.0;
 		

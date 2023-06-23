@@ -11,6 +11,9 @@ import com.ominMD.userService.dto.Expense;
 @FeignClient(name = "EXPENSE-SERVICE")
 public interface ExpenseService {
 
-	@GetMapping("/expenses/user/{userId}")
-	List<Expense> getExpensesByUser(@PathVariable("userId") Integer userId);
+	@GetMapping("/expenses/expenseList/{userId}")
+	List<Expense> getExpenseListByUser(@PathVariable("userId") Integer userId);
+
+	@GetMapping("/expenses/totalExpense/{userId}")
+	double getTotalExpenseOfUser(@PathVariable("userId")Integer userId);
 }

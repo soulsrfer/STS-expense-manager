@@ -13,6 +13,7 @@ import com.ominMD.userService.dto.Income;
 import com.ominMD.userService.entities.UserEntity;
 import com.ominMD.userService.excaptions.ResourceNotFoundExcaption;
 import com.ominMD.userService.external.services.ExpenseService;
+import com.ominMD.userService.external.services.IncomeService;
 import com.ominMD.userService.repositories.RoleRepository;
 import com.ominMD.userService.repositories.UserRepository;
 import com.ominMD.userService.responses.UserResponse;
@@ -32,6 +33,9 @@ public class UserServicesImpl implements UserServices {
 
 	@Autowired
 	ExpenseService expenseService;
+	
+	@Autowired
+	IncomeService incomeService;
 
 	@Override
 	public UserEntity addUser(UserEntity userEntity) {
@@ -51,11 +55,16 @@ public class UserServicesImpl implements UserServices {
 	public UserEntity getUserById(Integer id) {
 		UserEntity user = userRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundExcaption("user in not found for this id :" + id));
-
+		
+		//RestTemplate 
 //		List<Expense> expenses = (restTemplate.getForObject("http://EXPENSE-SERVICE/expenses/user/" +id, List.class));
-		List<Expense> expenses = expenseService.getExpensesByUser(id);
-
-		List<Income> incomes = (restTemplate.getForObject("http://INCOME-SERVICE/incomes/user/" + id, List.class));
+//		List<Income> incomes = (restTemplate.getForObject("http://INCOME-SERVICE/incomes/incomeList/" + id, List.class));
+		
+		
+		//feign client
+		List<Expense> expenses = expenseService.getExpenseListByUser(id);
+		List<Income> incomes = incomeService.getIncomeListByUser(id);
+		
 		user.setExpenses(expenses);
 		user.setIncomes(incomes);
 		return user;
@@ -76,6 +85,8 @@ public class UserServicesImpl implements UserServices {
 
 	@Override
 	public UserResponse entityToResponse(UserEntity user) {
+		
+		double balance = getUserBalance(user.getId());
 		UserResponse response = UserResponse.builder().
 				id(user.getId())
 				.firstName(user
@@ -86,14 +97,18 @@ public class UserServicesImpl implements UserServices {
 				.role(user.getRole().getName())
 				.expenses(user.getExpenses())
 				.incomes(user.getIncomes())
+				.balance(balance)
 				.build();
 		return response;
 	}
 
 	@Override
-	public Map<String, Object> getUserBalance(Integer userId) {
+	public double getUserBalance(Integer userId) {
+		double totalIncome = incomeService.getTotalIncomeOfUser(userId);
+		double totalExpnese = expenseService.getTotalExpenseOfUser(userId);
 		
-		return null;
+		double balance = totalIncome - totalExpnese;		
+		return balance;
 	}
 
 }

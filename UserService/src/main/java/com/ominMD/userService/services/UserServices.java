@@ -26,5 +26,6 @@ public interface UserServices {
 	//convert object from UserEntity to ResponseEntity
 	UserResponse entityToResponse(UserEntity user);
 	
-	Map<String, Object> getUserBalance(Integer userId);
+	//get user's balance
+	double getUserBalance(Integer userId);
 }

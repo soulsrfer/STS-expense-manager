@@ -17,7 +17,7 @@ public interface ExpenseRepository extends JpaRepository<ExpenseEntity, Integer>
 	List<ExpenseEntity> deleteAllByUserId(Integer userId);
 	
 	@Query(value= "select sum(amount) as amount from expenses where user_id = :userId",nativeQuery = true)
-	Map<String, Object> getSumOfexpenseByUserId(Integer userId);
+	Map<String, Object> getTotalExpenseOfUser(Integer userId);
 
 
 }

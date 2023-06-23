@@ -49,10 +49,12 @@ public class UserEntity {
 	@OneToOne
 	private RoleEntity role;
 
+	
 	@Transient
 	List<Expense> expenses;
 
 	@Transient
 	List<Income> incomes;
-
+	
+	
 }
