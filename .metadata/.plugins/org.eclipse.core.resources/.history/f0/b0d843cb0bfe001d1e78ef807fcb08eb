@@ -1,5 +1,0 @@
-package com.ominMD.expenseService.exceptions;
-
-public class ResourceNotFoundException {
-
-}

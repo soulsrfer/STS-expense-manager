@@ -1,6 +1,0 @@
-package com.ominMD.expenseService.repositories;
-
-@Repository
-public interface ExpenseRepository {
-
-}
